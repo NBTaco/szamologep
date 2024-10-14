@@ -1,7 +1,7 @@
 button{
     width: 100px;
     height: 100px;
-    border-radius: 50px;
+    border-radius: 5px;
     border: none;
     background-color: rgb(60, 60, 60);
     color: white;
@@ -29,13 +29,16 @@ button{
 
 
 #display{
-    width: 100%;
-    background-color: rgb(39, 39, 39);
-    padding: 20px;
+    width: 430px;
+    height: 5%;
+    margin-top: 20px;
+    margin-left:20px;
+    margin-right:20px ;
+    background-color: rgb(249, 249, 249);
     font-size: 5rem;
     text-align: left;
     border: none;
-    color: white;
+    color: rgb(36, 36, 36);
 }
 
 body{
@@ -48,11 +51,11 @@ body{
 }
 
 button:hover{
-    background-color: rgb(83, 83, 83); 
+    background-color: rgb(78, 78, 78); 
 }
 
 button:active{
-    background-color: rgb(99, 99, 99); 
+    background-color: rgb(154, 154, 154); 
 }
 
 .operator-btn{
@@ -64,5 +67,13 @@ button:active{
 }
 
 .operator-btn:active{
-    background-color: rgb(253, 204, 113)
+    background-color: rgb(250, 214, 149)
+}
+
+.b {
+    background-color: rgb(28, 28, 28);
+}
+
+.a {
+    background-color: rgb(251, 5, 5);
 }
