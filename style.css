@@ -74,6 +74,18 @@ button:active{
     background-color: rgb(28, 28, 28);
 }
 
+.b:hover {
+    background-color: rgb(28, 28, 28);
+}
+
 .a {
     background-color: rgb(251, 5, 5);
+}
+
+.a:hover {
+    background-color: rgb(240, 102, 102);
+}
+
+.a:active{
+    background-color: rgb(241, 156, 156);
 }

@@ -18,15 +18,18 @@ const buttons = [
     {label: '/', class: 'operator-btn'},
     {label: '0'},
     {label: '.'},
-    {label: '^2', class: 'operator-btn'},
+    {label: '=', class: 'a', action: 'calculate'},
+    {label: '^2', action:'negyzetreemeles' ,class: 'operator-btn'},
+    {label: '', class:'b'},
+    {label: '',  class:'b'},
     {label: 'C', class: 'a', action: 'clear'},
-    {label: '=', class: 'a', action: 'calculate'}
+    
 ]
 
 
 buttons.forEach(button => {
     const btn = document.createElement("button")
-    btn.textContent = button.label;
+    btn.innerHTML = button.label;
 
     if(button.class){
         btn.classList.add(button.class)
@@ -38,6 +41,9 @@ buttons.forEach(button => {
     else if(button.action === 'calculate')
         btn.addEventListener("click", calculate)
 
+    else if(button.action === 'negyzetreemeles')
+        btn.addEventListener("click", negyzet)
+
     else {
         btn.addEventListener("click", () => appendToDisplay(button.label))
     }
@@ -45,7 +51,11 @@ buttons.forEach(button => {
     keys.appendChild(btn);
 });
 
-
+function negyzet(){
+    let szam = display.value.replace("^2", "")
+    let eredmeny = Math.pow(szam, 2)
+    display.value = eredmeny
+}
 
 // Szamok / irasjelek hozzáadása a kijelőhöz
 function appendToDisplay(input){
@@ -61,7 +71,10 @@ function clearDisplay(){
 function calculate(){
 
     try{
-        display.value = eval(display.value)
+        if(display.value.includes("^2"))
+            negyzet();
+
+        else display.value = eval(display.value);
     }
     catch(error){
         display.value = "Error"
