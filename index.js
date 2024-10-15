@@ -27,6 +27,21 @@ const buttons = [
 buttons.forEach(button => {
     const btn = document.createElement("button")
     btn.textContent = button.label;
+
+    if(button.class){
+        btn.classList.add(button.class)
+    }
+
+    if (button.action === 'clear')
+        btn.addEventListener("click", clearDisplay)
+
+    else if(button.action === 'calculate')
+        btn.addEventListener("click", calculate)
+
+    else {
+        btn.addEventListener("click", () => appendToDisplay(button.label))
+    }
+
     keys.appendChild(btn);
 });
 
